@@ -25,6 +25,7 @@ def create_planet():
 
 @planets_bp.get("")
 def get_all_planets():
+<<<<<<< HEAD
     query = db.select(Planet).order_by(Planet.id)
     planets = db.session.scalars(query)
     
