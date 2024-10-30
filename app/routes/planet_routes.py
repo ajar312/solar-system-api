@@ -42,11 +42,11 @@ def get_all_planets():
     if color_param:
         query = query.where(Planet.color.ilike(f"%{color_param}%"))
 
-    sort_param = request.args.get("sort", "name")  
-    if sort_param == "id":
-        query = query.order_by(Planet.id.asc())
-    else:  
+    sort_param = request.args.get("sort", "name") 
+    if sort_param == "name":
         query = query.order_by(Planet.name.asc())
+    else:
+        pass
 
     planets = db.session.scalars(query)
     
