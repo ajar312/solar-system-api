@@ -33,7 +33,7 @@ def client(app):
 
 @pytest.fixture
 def two_saved_planets(app):
-    planet_1 = Planet(name="Mercury", description="The closest planet to the Sun.", color="Gray")
-    planet_2 = Planet(name="Venus", description="The second planet from the Sun.", color="Yellowish-white")
+    planet_1 = Planet(name="Mercury", description="The closest planet to the Sun", color="Gray")
+    planet_2 = Planet(name="Venus", description="The second planet from the Sun", color="Yellowish-white")
     db.session.add_all([planet_1, planet_2])
     db.session.commit()
