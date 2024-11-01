@@ -35,3 +35,8 @@ def test_create_one_planet(client):
         "description": "A dwarf planet with a varied surface",
         "color": "A rainbow of pale blues, yellows, oranges, and deep reds"
     }
+
+def test_get_one_planet_not_found(client):
+    response = client.get('/planets/10') 
+    assert response.status_code == 404
+    assert response.get_json() == {"message": "planet 10 not found"}
